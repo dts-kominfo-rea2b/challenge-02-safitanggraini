@@ -28,31 +28,21 @@ function lakukanLooping(arrPegawai) {
   let hasilLooping = [];
   // console.log(dataYangAkanDilooping[1]['namaDepan'] + " " + dataYangAkanDilooping[1]['namaBelakang']);
 
-  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
-    hasilLooping[i] = (dataYangAkanDilooping[i]['namaDepan']) + " " + (dataYangAkanDilooping[i]['namaBelakang']);
 
-  }
-  // console.log(hasilLooping);
-  
+  // console.log(hasilLooping[0]);
+
 
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
   let jumlahPria = 0;
-  
+
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
   let jumlahWanita = 0;
-  for(let i = 0; i < dataYangAkanDilooping.length; i++){
-    if(dataYangAkanDilooping[i]['jenisKelamin'] == "F"){
-      jumlahPria++;
-    }else{
-      jumlahWanita++;
-    }
-  }
 
 
 
@@ -69,11 +59,20 @@ function lakukanLooping(arrPegawai) {
   */
   let komentar = null;
 
-  if(jumlahPria>jumlahWanita){
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    hasilLooping[i] = (dataYangAkanDilooping[i]['namaDepan']) + " " + (dataYangAkanDilooping[i]['namaBelakang']);
+    if (dataYangAkanDilooping[i]['jenisKelamin'] == "F") {
+      jumlahPria++;
+    } else {
+      jumlahWanita++;
+    }
+  }
+
+  if (jumlahPria > jumlahWanita) {
     komentar = "Jumlah Pria lebih banyak dari Wanita";
-  }else if(jumlahPria<jumlahWanita){
+  } else if (jumlahPria < jumlahWanita) {
     komentar = "Jumlah Wanita lebih banyak dari Pria";
-  }else if(jumlahPria==jumlahWanita){
+  } else {
     komentar = "Jumlah Pria dan Wanita berimbang";
   }
 
@@ -92,7 +91,7 @@ function main(data) {
   console.log(hasil.hasilLooping);
   console.log(hasil.jumlahPria);
   console.log(hasil.jumlahWanita);
-  console.log(hasil.komentar);
+  // console.log(hasil.komentar);
   return hasil;
 }
 
