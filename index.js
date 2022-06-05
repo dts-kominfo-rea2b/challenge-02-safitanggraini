@@ -61,7 +61,7 @@ function lakukanLooping(arrPegawai) {
 
   for (let i = 0; i < dataYangAkanDilooping.length; i++) {
     hasilLooping[i] = (dataYangAkanDilooping[i]['namaDepan']) + " " + (dataYangAkanDilooping[i]['namaBelakang']);
-    if (dataYangAkanDilooping[i]['jenisKelamin'] == "F") {
+    if (dataYangAkanDilooping[i]['jenisKelamin'] == "M") {
       jumlahPria++;
     } else {
       jumlahWanita++;
@@ -76,6 +76,7 @@ function lakukanLooping(arrPegawai) {
     komentar = "Jumlah Pria dan Wanita berimbang";
   }
 
+  // console.log(typeof(jumlahWanita));
   // ! JANGAN DIMODIFIKASI
   return {
     hasilLooping,
@@ -91,7 +92,7 @@ function main(data) {
   console.log(hasil.hasilLooping);
   console.log(hasil.jumlahPria);
   console.log(hasil.jumlahWanita);
-  // console.log(hasil.komentar);
+  console.log(hasil.komentar);
   return hasil;
 }
 
